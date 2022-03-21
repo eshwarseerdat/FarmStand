@@ -25,6 +25,12 @@ app.get("/products", async (req, res) => {
   res.render("product/index", { allProducts });
 });
 
+app.get("/products/:id", async (req, res) => {
+  const { id } = req.params;
+  const foundProduct = await Product.findById(id);
+  res.render("product/show", { foundProduct });
+});
+
 app.listen("8080", () => {
   console.log(`listening on port 8080`);
 });
