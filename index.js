@@ -20,6 +20,11 @@ app.get("/", (req, res) => {
   res.send("Hello");
 });
 
+app.get("/products", async (req, res) => {
+  const allProducts = await Product.find({});
+  res.render("product/index", { allProducts });
+});
+
 app.listen("8080", () => {
   console.log(`listening on port 8080`);
 });
