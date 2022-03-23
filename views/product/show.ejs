@@ -10,7 +10,7 @@
 <h1><%= foundProduct.name %></h1>
 <ul>
   <li>$<%= foundProduct.price %> </li>
-  <li><%= foundProduct.category %> </li>
+  <li><a href="/products?category=<%= foundProduct.category %>"><%= foundProduct.category %></a></li>
 </ul>
 <form action="/products/<%= foundProduct._id %>?_method=DELETE" method="post">
   <button>Delete</button>
