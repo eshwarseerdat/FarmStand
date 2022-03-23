@@ -68,6 +68,12 @@ app.put("/products/:id", async (req, res) => {
   res.redirect(`/products/${id}`);
 });
 
+app.delete("/products/:id", async (req, res) => {
+  const { id } = req.params;
+  const product = await Product.findByIdAndDelete(id);
+  res.redirect("/products");
+});
+
 app.listen("8080", () => {
   console.log(`listening on port 8080`);
 });
