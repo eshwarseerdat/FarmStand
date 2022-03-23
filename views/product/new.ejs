@@ -19,13 +19,14 @@
     <br>
     <label for="category">Category</label>
     <select name="category" id="category" required>
-      <option value="fruit">fruit</option>
-      <option value="vegetable">vegetable</option>
-      <option value="dairy">dairy</option>
+      <% for (let cat of categories) { %>
+      <option value="<%= cat %>"><%= cat %></option>
+      <% } %>
     </select>
     <br>
     <button>Submit</button>
   </form>
+  <a href="/products">Cancel</a>
 </body>
 
 </html>
